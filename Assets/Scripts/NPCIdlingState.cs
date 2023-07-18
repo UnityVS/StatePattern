@@ -4,8 +4,9 @@ namespace Assets.Scripts
 {
     public class NPCIdlingState : NPCWalkingState
     {
-        public NPCIdlingState(NPCStateMachine npcStateMachine) : base(npcStateMachine){}
         private float _timeToWalk = 3f;
+
+        public NPCIdlingState(StateSwitcherInfo stateSwitcherInfo) : base(stateSwitcherInfo){}
 
         public override void Enter() => base.Enter();
 
@@ -18,7 +19,7 @@ namespace Assets.Scripts
             if (_timeToWalk <= _timer)
             {
                 _timer = 0;
-                _stateMachine.SwitchState<NPCWalkingState>();
+                _stateSwitcherInfo.GetStateSwitcher.SwitchState<NPCWalkingState>();
             }
         }
     }

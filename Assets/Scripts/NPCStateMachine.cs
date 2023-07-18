@@ -14,9 +14,9 @@ namespace Assets.Scripts
             _switcherInfo.InitStateSwitcherInfo(this, npc);
             _states = new List<IState>()
             {
-                new NPCWalkingState(this),
-                new NPCIdlingState(this),
-                new NPCWorkingState(this)
+                new NPCWalkingState(_switcherInfo),
+                new NPCIdlingState(_switcherInfo),
+                new NPCWorkingState(_switcherInfo)
             };
             _currentState = _states[1];
             _currentState.Enter();

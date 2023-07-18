@@ -4,7 +4,7 @@ namespace Assets.Scripts
 {
     public class NPCWorkingState : NPCWalkingState
     {
-        public NPCWorkingState(NPCStateMachine npcStateMachine) : base(npcStateMachine){}
+        public NPCWorkingState(StateSwitcherInfo stateSwitcherInfo) : base(stateSwitcherInfo){}
         private float _workingTime = 4f;
 
         public override void Enter() => base.Enter();
@@ -18,7 +18,7 @@ namespace Assets.Scripts
             if (_workingTime <= _timer)
             {
                 _timer = 0;
-                _stateMachine.SwitchState<NPCWalkingState>();
+                _stateSwitcherInfo.GetStateSwitcher.SwitchState<NPCWalkingState>();
             }
         }
     }
