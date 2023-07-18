@@ -13,12 +13,12 @@ namespace Assets.Scripts
 
         public override void Update()
         {
-            _timer += Time.deltaTime;
-            Debug.Log($"Я работаю еще {_workingTime - _timer:F1}");
-            if (_workingTime <= _timer)
+            Timer += Time.deltaTime;
+            Debug.Log($"Я работаю еще {_workingTime - Timer:F1}");
+            if (_workingTime <= Timer)
             {
-                _timer = 0;
-                _stateSwitcherInfo.GetStateSwitcher.SwitchState<NPCWalkingState>();
+                Timer = 0;
+                StateSwitcher.GetStateSwitcher.SwitchState<NPCWalkingState>();
             }
         }
     }

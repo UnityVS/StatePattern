@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Assets.Scripts
+﻿namespace Assets.Scripts
 {
     public class StateSwitcherInfo
     {
