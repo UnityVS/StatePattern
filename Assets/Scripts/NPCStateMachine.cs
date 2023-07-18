@@ -5,10 +5,9 @@ namespace Assets.Scripts
 {
     public class NPCStateMachine : IStateSwitcher
     {
-        protected List<IState> _states;
-        protected IState _currentState;
+        private List<IState> _states;
+        private IState _currentState;
         private StateSwitcherInfo _switcherInfo = new();
-        public StateSwitcherInfo GetStateSwitcher => _switcherInfo;
 
         public NPCStateMachine(NPC npc)
         {
